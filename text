@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Text to Speech for Visually Impaired</title>
+  <style>
+    body {
+      font-size: 1.2em;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 40px;
+    }
+    textarea {
+      width: 100%;
+      height: 150px;
+      font-size: 1em;
+      padding: 10px;
+    }
+    button, select {
+      padding: 10px 20px;
+      font-size: 1.1em;
+      margin-top: 10px;
+    }
+    label {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>🗣️ Text to Speech</h1>
+  
+  <label for="voiceSelect">Choose Voice:</label><br>
+  <select id="voiceSelect"></select><br><br>
+  
+  <label for="text">Enter your text below:</label><br>
+  <textarea id="text" placeholder="Type or paste text here..."></textarea><br>
+  <button onclick="speakText()">🔊 Speak</button>
+
+  <script>
+    let voices = [];
+
+    function populateVoiceList() {
+      voices = speechSynthesis.getVoices();
+      const voiceSelect = document.getElementById('voiceSelect');
+      voiceSelect.innerHTML = '';
+
+      voices.forEach((voice, index) => {
+        const option = document.createElement('option');
+        option.value = index;
+        option.textContent = `${voice.name} (${voice.lang})${voice.default ? ' [Default]' : ''}`;
+        voiceSelect.appendChild(option);
+      });
+    }
+
+    // Wait for voices to be loaded
+    window.speechSynthesis.onvoiceschanged = populateVoiceList;
+
+    function speakText() {
+      const text = document.getElementById('text').value.trim();
+      const voiceIndex = document.getElementById('voiceSelect').value;
+
+      if (text === '') {
+        alert("Please enter some text.");
+        return;
+      }
+
+      // Stop any existing speech
+      speechSynthesis.cancel();
+
+      const selectedVoice = voices[voiceIndex];
+      const words = text.split(/\s+/);
+      const pauseBetweenWords = 50; // 50 milliseconds
+      let delay = 0;
+
+      words.forEach(word => {
+        setTimeout(() => {
+          const utterance = new SpeechSynthesisUtterance(word);
+          utterance.voice = selectedVoice;
+          utterance.rate = 1;
+          utterance.pitch = 1;
+          utterance.volume = 1;
+          speechSynthesis.speak(utterance);
+        }, delay);
+        delay += pauseBetweenWords;
+      });
+    }
+  </script>
+</body>
+</html>
