@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Tag Demonstration</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #f4f4f4;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        main {
+            margin: 1rem;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        article, aside {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            margin: 1rem;
+            min-width: 300px;
+        }
+
+        article {
+            flex: 2;
+        }
+
+        aside {
+            flex: 1;
+        }
+
+        figure {
+            margin: 0;
+            text-align: center;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        figcaption {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Welcome to My HTML5 Demo Page</h1>
+</header>
+
+<nav>
+    <a href="#home">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#contact">CONTACT</a>
+</nav>
+
+<main>
+    <section>
+        <h2>About This Page</h2>
+        <p>
+            This page demonstrates the use of various HTML5 tags such as
+            <span style="color:blue;">header</span>,
+            <span style="color:blue;">article</span>,
+            <span style="color:blue;">figure</span>, and others.
+        </p>
+    </section>
+
+    <div class="row">
+        <article>
+            <h2>Article Section</h2>
+            <p>
+                An article typically contains standalone content like a blog post or a news article.
+            </p>
+
+            <figure>
+             <img src="https://upload.wikimedia.org/wikipedia/commons/7/79/Rufous-tailed_hummingbird_Amazilia_tzacatl.jpg" alt="Humming Bird">
+                <figcaption>Fig: A Humming Bird</figcaption>
+            </figure>
+        </article>
+
+        <aside>
+            <h2>Related Links</h2>
+            <ul>
+                <li><a href="https://www.tutorialkart.com/html/">HTML Tutorials</a></li>
+                <li><a href="https://www.tutorialkart.com/css/">CSS Tutorials</a></li>
+                <li><a href="https://www.tutorialkart.com/javascript/">JavaScript Basics</a></li>
+            </ul>
+        </aside>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2024 HTML5 Demo Page. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
