@@ -1,0 +1,57 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title>Embed Audio and Video</title> 
+<style> 
+body { 
+font-family: Arial, sans-serif; 
+margin: 20px; 
+line-height: 1.6; 
+} 
+h1, h2 { 
+color: #333; 
+} 
+.container { 
+max-width: 800px; 
+margin: 0 auto; 
+text-align: center; 
+} 
+.video-container { 
+margin: 20px 0; 
+} 
+.audio-container { 
+margin: 20px 0; 
+} 
+</style> 
+</head> 
+<body> 
+<div class="container"> 
+<h1>Embed Audio and Video in HTML</h1> 
+<!-- Embedding Audio --> 
+<div class="audio-container"> 
+<h2>Audio Example</h2> 
+<p>Listen to this sample audio:</p> 
+<audio controls> 
+<source src="https://www.tutorialkart.com/wp-content/uploads/2024/12/sample-audio.mp3" 
+type="audio/mpeg"> 
+Your browser does not support the audio element. 
+</audio> 
+<!—Embedding Video --> 
+</div> 
+<h2>Video Example</h2> 
+<video width="400" height="250" controls> 
+<source src="D:\ACET\HTML\images\video.mp4" type="video/mp4"> 
+Your browser does not support the video element. 
+</video> 
+<!-- Embedding YouTube Video --> 
+<div class="video-container"> 
+<h2>YouTube Video Example</h2> 
+<p>Watch this embedded YouTube video:</p> 
+<iframe width="560" height="315" 
+src="https://www.youtube.com/embed/it1rTvBcfRg?si=lgWAdiI8cmpxr6AH&amp;controls=0" 
+title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
+</div> 
+</div> 
+</body> 
+</html> 
